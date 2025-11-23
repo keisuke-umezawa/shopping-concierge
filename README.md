@@ -45,7 +45,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 The fastest way to get started is using GitHub Codespaces:
 
 1. Click the "Code" button on the GitHub repository
-2. Select "Create codespace on main"
+2. Select "Create codespace" (ensure you select the branch you want to work with, such as the PR branch or main)
 3. Wait for the environment to set up automatically (this takes a few minutes)
 4. Update the `.env` file with your Google Cloud credentials
 5. Run `adk run shopping_concierge` or `adk web` to start
