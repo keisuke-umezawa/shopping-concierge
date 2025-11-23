@@ -12,11 +12,7 @@ export PATH="$HOME/.local/bin:$PATH"
 echo "✓ uv installed: $(uv --version)"
 
 # Install project dependencies
-echo "📚 Installing project dependencies..."
-uv sync
-
-# Install development dependencies
-echo "🔧 Installing development dependencies..."
+echo "📚 Installing project & development dependencies..."
 uv sync --dev
 
 # Create .env file from example if it doesn't exist
