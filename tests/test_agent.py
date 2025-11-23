@@ -1,6 +1,7 @@
 """Tests for the Shopping Concierge Agent."""
 
 import pytest
+
 from shopping_concierge.agent import agent
 
 
@@ -12,8 +13,8 @@ def test_agent_exists():
 
 def test_agent_has_instructions():
     """Test that the agent has instructions."""
-    assert agent.instructions is not None
-    assert len(agent.instructions) > 0
+    assert agent.instruction is not None
+    assert len(agent.instruction) > 0
 
 
 @pytest.mark.asyncio
