@@ -28,20 +28,14 @@ The shopping-concierge agent has the following capabilities:
 Before you begin, ensure you have the following:
 
 - Python 3.10 or higher
-- [uv](https://github.com/astral-sh/uv) or [Poetry](https://python-poetry.org/) for dependency management
+- [uv](https://github.com/astral-sh/uv) for dependency management
 - Google Cloud Project with Vertex AI API enabled (recommended)
 - OR a Gemini API key
 
-### Installing uv (Recommended)
+### Installing uv
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### Installing Poetry (Alternative)
-
-```bash
-curl -sSL https://install.python-poetry.org | python3 -
 ```
 
 ## Setup and Installation
@@ -55,16 +49,8 @@ cd shopping-concierge
 
 ### 2. Install Dependencies
 
-Using uv (recommended):
-
 ```bash
 uv sync
-```
-
-Using Poetry (alternative):
-
-```bash
-poetry install
 ```
 
 ### 3. Configure Environment Variables
@@ -144,18 +130,9 @@ shopping-concierge/
 
 ### Running Tests
 
-Using uv:
-
 ```bash
 uv sync --dev
 uv run pytest tests
-```
-
-Using Poetry:
-
-```bash
-poetry install --with dev
-poetry run pytest tests
 ```
 
 ### Running Evaluations
@@ -211,7 +188,7 @@ Here are some example queries you can try:
 
 **Issue**: Module not found errors
 
-**Solution**: Ensure you've installed dependencies with `uv sync` or `poetry install`.
+**Solution**: Ensure you've installed dependencies with `uv sync`.
 
 **Issue**: Environment variable errors
 
