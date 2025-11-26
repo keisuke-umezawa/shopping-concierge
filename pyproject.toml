@@ -13,6 +13,7 @@ dev = [
     "pytest>=9.0.1",
     "pytest-asyncio>=0.23.0",
     "ruff>=0.8.0",
+    "google-adk[eval]>=1.0.0",
 ]
 
 [build-system]
