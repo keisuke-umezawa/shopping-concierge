@@ -8,13 +8,16 @@ from google.adk.evaluation.agent_evaluator import AgentEvaluator
 FIXTURE_DIR = os.path.join(os.path.dirname(__file__), "fixture")
 
 SKIP_REASON = (
-    "Skipping ADK evaluation test: requires Google Cloud credentials. "
-    "Set GOOGLE_APPLICATION_CREDENTIALS or run 'gcloud auth application-default login'."
+    "Skipping ADK evaluation test: requires credentials. "
+    "Set GOOGLE_API_KEY for Gemini API, or GOOGLE_APPLICATION_CREDENTIALS / "
+    "'gcloud auth application-default login' for Vertex AI."
 )
 
 
-def _has_gcp_credentials() -> bool:
-    """Check if Google Cloud credentials are available."""
+def _has_model_credentials() -> bool:
+    """Check if credentials for running the model are available."""
+    if os.environ.get("GOOGLE_API_KEY"):
+        return True
     if os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"):
         return True
     default_creds_path = os.path.expanduser(
@@ -24,15 +27,15 @@ def _has_gcp_credentials() -> bool:
 
 
 @pytest.mark.asyncio
-@pytest.mark.skipif(not _has_gcp_credentials(), reason=SKIP_REASON)
+@pytest.mark.skipif(not _has_model_credentials(), reason=SKIP_REASON)
 async def test_shopping_concierge_basic_evaluation():
     """Test the shopping concierge agent's basic ability via a session file.
 
     This test uses the ADK AgentEvaluator to evaluate the agent against
     predefined test cases in the test.json file.
 
-    Note: This test requires Google Cloud credentials to be configured.
-    It will be skipped in CI environments without credentials.
+    Note: This test requires credentials to be configured (either GOOGLE_API_KEY
+    for Gemini API or GCP credentials for Vertex AI).
     """
     await AgentEvaluator.evaluate(
         agent_module="shopping_concierge",
