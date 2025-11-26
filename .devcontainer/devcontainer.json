@@ -48,7 +48,7 @@
   "postCreateCommand": "bash .devcontainer/setup.sh",
 
   "remoteEnv": {
-    "PATH": "$HOME/.local/bin:$PATH"
+    "PATH": "${containerEnv:HOME}/.local/bin:${containerEnv:PATH}"
   },
 
   "forwardPorts": [8000],

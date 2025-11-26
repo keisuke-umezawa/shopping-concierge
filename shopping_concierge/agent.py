@@ -14,6 +14,8 @@ agent = LlmAgent(
     model=f"vertex_ai/{MODEL_NAME}",
     instruction=AGENT_INSTRUCTIONS,
     name="shopping_concierge",
-    description="A shopping concierge agent that helps users find and "
-    "recommend products",
+    description=(
+        "A shopping concierge agent that helps users find and "
+        "recommend products"
+    ),
 )

@@ -11,8 +11,8 @@ def test_agent_exists():
     assert agent.name == "shopping_concierge"
 
 
-def test_agent_has_instruction():
-    """Test that the agent has instruction."""
+def test_agent_has_instructions():
+    """Test that the agent has instructions."""
     assert agent.instruction is not None
     assert len(agent.instruction) > 0
 
