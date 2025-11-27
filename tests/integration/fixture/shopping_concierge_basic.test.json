@@ -1,0 +1,74 @@
+{
+  "eval_set_id": "shopping_concierge_basic_eval_set",
+  "name": "Shopping Concierge Basic Evaluation Set",
+  "description": "Basic evaluation set for testing the shopping concierge agent's ability to respond to user queries",
+  "eval_cases": [
+    {
+      "eval_id": "greeting_test",
+      "conversation": [
+        {
+          "invocation_id": "inv-001",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Hello, what can you help me with?"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Hello! I'm your shopping concierge assistant. I can help you find and recommend products based on your preferences and needs. I can assist with searching for products, comparing features and prices, and helping you make informed purchasing decisions. What are you looking for today?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "tool_uses": [],
+            "intermediate_responses": []
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "shopping_concierge",
+        "user_id": "test_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "product_inquiry_test",
+      "conversation": [
+        {
+          "invocation_id": "inv-002",
+          "user_content": {
+            "parts": [
+              {
+                "text": "I'm looking for a laptop for programming. What should I consider?"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "When looking for a laptop for programming, there are several key factors to consider: processor performance (Intel Core i5/i7 or AMD Ryzen 5/7), RAM (at least 16GB recommended), storage (SSD with 256GB or more), display quality and size, keyboard comfort for long coding sessions, and battery life. Would you like me to help you narrow down your options based on your budget or specific requirements?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "tool_uses": [],
+            "intermediate_responses": []
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "shopping_concierge",
+        "user_id": "test_user",
+        "state": {}
+      }
+    }
+  ],
+  "creation_timestamp": 0.0
+}

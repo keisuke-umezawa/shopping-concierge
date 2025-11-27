@@ -6,12 +6,10 @@ from google.adk.agents import LlmAgent
 
 from shopping_concierge.prompt import AGENT_INSTRUCTIONS
 
-PROJECT_ID = os.getenv("PROJECT_ID")
-LOCATION = os.getenv("LOCATION", "us-central1")
-MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.0-flash-exp")
+MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.0-flash-lite")
 
 agent = LlmAgent(
-    model=f"vertex_ai/{MODEL_NAME}",
+    model=MODEL_NAME,
     instruction=AGENT_INSTRUCTIONS,
     name="shopping_concierge",
     description=(
