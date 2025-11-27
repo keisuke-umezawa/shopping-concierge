@@ -6,7 +6,7 @@ from google.adk.agents import LlmAgent
 
 from shopping_concierge.prompt import AGENT_INSTRUCTIONS
 
-MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.0-flash-exp")
+MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.0-flash-lite")
 
 agent = LlmAgent(
     model=MODEL_NAME,
